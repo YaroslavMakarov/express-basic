@@ -2,11 +2,12 @@ import express from 'express';
 import mongoose from 'mongoose';
 import router from './router.js';
 import fileupload from 'express-fileupload';
+import { env } from 'process';
 
 const app = express();
 
 const port = 5000;
-const DB_URL = `mongodb+srv://Yaroslav_Makarov:Rosqzuzs@cluster0.wnou1.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
+const DB_URL = env.EXPRESS_BASIC;
 
 app.use(fileupload({}));
 app.use(express.json());
